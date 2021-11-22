@@ -1,0 +1,14 @@
+.total {
+  color: coral;
+  font-size: 25px;
+  font-weight: bold;
+}
+.cart-btn {
+  border-radius: 5px;
+  background: #f5be44;
+  width: 203px;
+  height: 30px;
+  border: 1px solid grey;
+  cursor: pointer;
+  color: rgb(128, 93, 7);
+}

@@ -1,0 +1,18 @@
+.header {
+  text-align: center;
+}
+.header nav {
+  background-color: #000;
+  text-align: start;
+}
+nav a {
+  color: #fff;
+  font-size: 20px;
+  line-height: 40px;
+  text-decoration: none;
+  padding: 5px;
+  margin-right: 20px;
+}
+nav a:hover {
+  background-color: gray;
+}

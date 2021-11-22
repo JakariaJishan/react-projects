@@ -1,0 +1,21 @@
+.product {
+  display: flex;
+  margin: 1rem;
+  padding: 1rem;
+  border-bottom: 1px solid lightgray;
+}
+.product img {
+  width: 150px;
+  margin-right: 2rem;
+}
+.product h1 {
+  margin-top: 0;
+}
+.cart-btn {
+  border-radius: 5px;
+  background: #f5be44;
+  width: 203px;
+  height: 30px;
+  border: 1px solid grey;
+  cursor: pointer;
+}
