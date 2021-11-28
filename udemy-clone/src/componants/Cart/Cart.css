@@ -1,0 +1,14 @@
+.cart-price {
+  margin: 1rem;
+  padding: 1rem;
+}
+a {
+  text-decoration: none;
+  background-color: blueviolet;
+  color: white;
+  padding: 10px 93px;
+  border-radius: 5px;
+}
+.cart-link {
+  text-align: center;
+}
