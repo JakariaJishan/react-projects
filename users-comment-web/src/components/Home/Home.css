@@ -1,0 +1,22 @@
+.home {
+  background-color: #fff;
+  color: #333;
+  margin: 1rem auto;
+  padding: 1rem;
+  width: 80%;
+  border-radius: 10px;
+}
+h1 {
+  font-size: 24px;
+}
+p {
+  color: #8481a1;
+  font-size: 18px;
+}
+a {
+  background-color: #755df3;
+  padding: 5px 15px;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+}
