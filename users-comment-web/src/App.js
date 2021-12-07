@@ -7,6 +7,7 @@ function App() {
   return (
     <div className="app">
     <BrowserRouter >
+
       <Routes >
         <Route exact path="/" element={<Home />} />
         <Route path="/post/:userId" element={<Post/>}/>

@@ -11,9 +11,11 @@ const Home = () => {
   }, []);
   return (
     <div>
+          <p style={{fontSize: '80px', textAlign:'center'}}>My Posts</p>
+
       {
         post.map((ele) => (
-            <div className="home">
+            <div className="home" key={ele.id}>
                 <p>Post: {ele.id}</p>
                 <h1> {ele.title}</h1>
                 <p >{ele.body}</p>
