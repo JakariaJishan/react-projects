@@ -5,6 +5,7 @@ const Shop = (props) => {
   const { products, addToCart, cart } = props;
   return (
     <div>
+     
       <div>
         <Link to={`/details/${products.id}`}>
           <h1>{products.title}</h1>
@@ -15,8 +16,14 @@ const Shop = (props) => {
         <button disabled>cart added</button>
       ) : (
         <button
-          onClick={() => addToCart(products.id, products.title, products.price, products.quantity)}
-          
+          onClick={() =>
+            addToCart(
+              products.id,
+              products.title,
+              products.price,
+              products.quantity
+            )
+          }
         >
           add to cart
         </button>

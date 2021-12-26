@@ -13,14 +13,16 @@ const Cart = (props) => {
     <div>
       this is cart {totalPrice.toFixed(2) }
       {cart.map((pd) => (
+        
         <div key={pd.cartId}>
+          {console.log(pd)}
           <h1>{pd.name}</h1>
           <p>{pd.price}</p>
           <p>{pd.price * pd.quantity}</p>
           <button onClick={() => decrementCart(pd.id, pd.quantity)}>-</button>
           <span>{pd.quantity}</span>
           <button onClick={() => incrementCart(pd.id, pd.quantity)}>+</button>
-          <button onClick={() => removeFromCart(pd.cartId)}>remove</button>
+          <button onClick={() => removeFromCart(pd.id)}>remove</button>
         </div>
       ))}
     </div>

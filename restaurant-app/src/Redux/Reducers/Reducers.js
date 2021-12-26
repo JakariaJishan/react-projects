@@ -1,5 +1,6 @@
 const initialState = {
   cart: [],
+  filOut: [],
   products: [
     {
       id: 1,
@@ -97,6 +98,7 @@ const foodReducers = (state = initialState, action) => {
       return { ...state, cart: [...state.cart, newItem] };
 
     case "REMOVE_FROM_CART":
+      console.log(action)
       return { ...state, cart: state.cart.filter((pd) => pd.id !== action.id) };
 
     //increment and decrement products
@@ -112,8 +114,16 @@ const foodReducers = (state = initialState, action) => {
       return {
         ...state,
         cart: state.cart.map((ele) =>
-          ele.id === action.id && ele.quantity>0 ? { ...ele, quantity: ele.quantity - 1 } : ele
+          ele.id === action.id && ele.quantity > 0
+            ? { ...ele, quantity: ele.quantity - 1 }
+            : ele
         ),
+      };
+    // filter items by category
+    case "FILTER_ITEMS":
+      return {
+        ...state,
+        filOut: action.category,
       };
     default:
       return state;

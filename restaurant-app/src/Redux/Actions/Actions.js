@@ -29,3 +29,11 @@ export const decrementCart = (id, quantity) => {
         quantity
     }
 }
+
+export const filterItems = (category) => {
+    return {
+        type: 'FILTER_ITEMS',
+        category
+    }
+}
+
