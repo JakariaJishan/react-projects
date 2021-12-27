@@ -1,0 +1,33 @@
+.contain {
+  width: 80%;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 1rem;
+}
+.contain-text h1 {
+  font-size: 50px;
+}
+.contain-img img {
+  width: 90%;
+  float: right;
+}
+.contain p {
+  margin: 2rem 0 60px;
+  color: #5d5d5d;
+}
+.contain a {
+  margin-top: 30px;
+  padding: 8px 15px;
+  border-radius: 20px;
+  transition: 0.4s ease-in;
+  background-color: black;
+  border: 1px solid black;
+  color: white;
+}
+
+.contain a:hover {
+  background-color: white;
+  color: black !important;
+}

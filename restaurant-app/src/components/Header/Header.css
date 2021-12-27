@@ -1,0 +1,39 @@
+.main-header {
+}
+.header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  margin: auto;
+}
+.header-left {
+  width: 30%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header-left a {
+  font-size: 12px;
+  font-weight: 500;
+  color: #cecece;
+  transition: 0.4s ease-in;
+}
+.header-left a:hover {
+  color: black;
+  border-bottom: 1px solid black;
+}
+
+.header-signIn {
+  padding: 8px 15px;
+  border-radius: 20px;
+  transition: 0.4s ease-in;
+  background-color: black;
+  border: 1px solid black !important;
+}
+
+.header-signIn:hover {
+  background-color: white;
+  color: black !important;
+}

@@ -1,14 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import './Shop.css';
 
 const Shop = (props) => {
   const { products, addToCart, cart } = props;
   return (
-    <div>
-     
+    <div className="shop-main">
       <div>
         <Link to={`/details/${products.id}`}>
-          <h1>{products.title}</h1>
+          <h3>{products.title}</h3>
           <p>{products.price}</p>
         </Link>
       </div>

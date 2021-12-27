@@ -1,0 +1,18 @@
+.shop-main {
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  padding: 1rem;
+}
+.shop-main button {
+  margin-left: 1rem;
+  border: none;
+  background-color: white;
+  transition: 0.4s ease-in;
+  border-radius: 15px;
+  border: 1px solid black;
+  padding: 5px 15px;
+}
+.shop-main button:hover {
+  background-color: black;
+  color: white;
+  border: 1px solid black;
+}

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { connect } from "react-redux";
 import { addToCart, filterItems } from "../../Redux/Actions/Actions";
 import Shop from "../Shop/Shop";
+import "./Products.css";
 
 const Products = (props) => {
   const { product, addToCart, cart, filterItems } = props;
@@ -12,24 +13,30 @@ const Products = (props) => {
   };
   filterItems(count);
   return (
-    <div>
-      products
-      <div>
-        <div>
-          <button onClick={() => setCount(product)}>all</button>
-          <button onClick={() => handleFilter("breakfast")}>break fast</button>
-          <button onClick={() => handleFilter("lunch")}>lunch</button>
-          <button onClick={() => handleFilter("shakes")}>dinner</button>
+    <div className="products-main">
+      <div className="products">
+        <h1>products</h1>
+        <div className="products-filter">
+          <div>
+            <button onClick={() => setCount(product)}>all</button>
+            <button onClick={() => handleFilter("breakfast")}>
+              break fast
+            </button>
+            <button onClick={() => handleFilter("lunch")}>lunch</button>
+            <button onClick={() => handleFilter("shakes")}>dinner</button>
+          </div>
+        </div>
+        <div className="products-items">
+          {count.map((pd) => (
+            <Shop
+              key={pd.id}
+              products={pd}
+              cart={cart}
+              addToCart={addToCart}
+            ></Shop>
+          ))}
         </div>
       </div>
-      {count.map((pd) => (
-        <Shop
-          key={pd.id}
-          products={pd}
-          cart={cart}
-          addToCart={addToCart}
-        ></Shop>
-      ))}
     </div>
   );
 };

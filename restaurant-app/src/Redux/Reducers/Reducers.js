@@ -86,6 +86,7 @@ const initialState = {
   ],
 };
 const foodReducers = (state = initialState, action) => {
+
   switch (action.type) {
     case "ADD_TO_CART":
       const newItem = {
@@ -98,7 +99,6 @@ const foodReducers = (state = initialState, action) => {
       return { ...state, cart: [...state.cart, newItem] };
 
     case "REMOVE_FROM_CART":
-      console.log(action)
       return { ...state, cart: state.cart.filter((pd) => pd.id !== action.id) };
 
     //increment and decrement products
@@ -125,9 +125,10 @@ const foodReducers = (state = initialState, action) => {
         ...state,
         filOut: action.category,
       };
+
+    
     default:
       return state;
   }
 };
-
 export default foodReducers;

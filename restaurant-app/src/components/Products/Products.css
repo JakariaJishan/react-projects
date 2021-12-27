@@ -1,0 +1,32 @@
+.products-main {
+  margin-top: 1rem;
+  padding: 2rem 0;
+}
+.products {
+  width: 80%;
+  margin: auto;
+  text-align: center;
+}
+.products-items {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 1rem;
+}
+.products-filter {
+  text-align: center;
+  margin: 1rem 0;
+}
+.products-filter button {
+  margin-left: 1rem;
+  border: none;
+  background-color: white;
+  transition: 0.4s ease-in;
+  border-radius: 15px;
+  border: 1px solid black;
+  padding: 5px 15px;
+}
+.products-filter button:hover {
+  background-color: black;
+  color: white;
+  border: 1px solid black;
+}

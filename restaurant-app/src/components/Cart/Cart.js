@@ -15,7 +15,6 @@ const Cart = (props) => {
       {cart.map((pd) => (
         
         <div key={pd.cartId}>
-          {console.log(pd)}
           <h1>{pd.name}</h1>
           <p>{pd.price}</p>
           <p>{pd.price * pd.quantity}</p>
