@@ -18,7 +18,7 @@ const Products = (props) => {
         <h1>products</h1>
         <div className="products-filter">
           <div>
-            <button onClick={() => setCount(product)}>all</button>
+            <button  onClick={() => setCount(product)}>all</button>
             <button onClick={() => handleFilter("breakfast")}>
               break fast
             </button>

@@ -1,6 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import { decrementCart, incrementCart, removeFromCart } from "../../Redux/Actions/Actions";
+import './Cart.css';
 const Cart = (props) => {
   const { cart, removeFromCart, incrementCart,decrementCart } = props;
   let totalPrice = 0;

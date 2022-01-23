@@ -4,7 +4,8 @@ export const addToCart = (id, name, price, quantity) => {
         id,
         name,
         price,
-        quantity
+        quantity, 
+        
     }
 }
 

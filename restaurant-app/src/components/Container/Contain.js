@@ -2,7 +2,7 @@ import { faHamburger, faSmileWink } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import { Link } from "react-router-dom";
-import containPic from '../../images/Food-Meat-PNG-1200x960.png';
+import containPic from '../../Food-Meat-PNG-1200x960.png';
 import './Contain.css';
 const Contain = () => {
   return (

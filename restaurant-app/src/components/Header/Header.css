@@ -20,7 +20,7 @@
   color: #cecece;
   transition: 0.4s ease-in;
 }
-.header-left a:hover {
+.header-left a:focus {
   color: black;
   border-bottom: 1px solid black;
 }

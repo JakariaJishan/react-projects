@@ -1,5 +1,5 @@
 import {
-    faShoppingCart
+  faShoppingCart
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
@@ -16,14 +16,14 @@ const Header = (props) => {
           <h1>tfood</h1>
         </div>
         <div className="header-left">
-          <Link to={"/home"}>Home</Link>
+          <Link to={"/"}>Home</Link>
           <Link to={"/about-us"}> About us </Link>
           <Link to={"/cart"}>
             <FontAwesomeIcon icon={faShoppingCart} />
             <sup> {cart.length}</sup>
           </Link>
           <Link to={"/signin"} className="header-signIn">
-            Sign Out
+            Sign in
           </Link>
         </div>
         <div className="header-social">
