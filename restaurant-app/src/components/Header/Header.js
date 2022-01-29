@@ -1,6 +1,4 @@
-import {
-  faShoppingCart
-} from "@fortawesome/free-solid-svg-icons";
+import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import { connect } from "react-redux";
@@ -22,14 +20,10 @@ const Header = (props) => {
             <FontAwesomeIcon icon={faShoppingCart} />
             <sup> {cart.length}</sup>
           </Link>
-          <Link to={"/signin"} className="header-signIn">
+          <Link to={"/form/signin"} className="header-signIn">
             Sign in
           </Link>
         </div>
-        <div className="header-social">
-         
-        </div>
-        {/* <Link to={'/signIn'}>Sign In</Link> */}
       </div>
     </div>
   );

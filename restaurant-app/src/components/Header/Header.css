@@ -20,10 +20,6 @@
   color: #cecece;
   transition: 0.4s ease-in;
 }
-.header-left a:focus {
-  color: black;
-  border-bottom: 1px solid black;
-}
 
 .header-signIn {
   padding: 8px 15px;
@@ -31,9 +27,4 @@
   transition: 0.4s ease-in;
   background-color: black;
   border: 1px solid black !important;
-}
-
-.header-signIn:hover {
-  background-color: white;
-  color: black !important;
 }

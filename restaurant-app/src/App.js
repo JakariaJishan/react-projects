@@ -1,18 +1,26 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Cart from "./components/Cart/Cart";
+import Form from "./components/FormControl/Form/Form";
 import Header from "./components/Header/Header";
 import Home from "./components/Home/Home";
+import { PrivateRoute } from "./components/PrivateRoute/PrivateRoute";
 import ShowDetails from "./components/ShowDetails/ShowDetails";
-import SignIn from "./components/SignIn/SignIn";
 function App() {
   return (
-    <BrowserRouter >
+    <BrowserRouter>
       <Header></Header>
       <Routes>
-        <Route exact path="/" element={<Home />} />
-        <Route exact path="/details/:productId" element={<ShowDetails />} />
-        <Route exact path="/cart" element={<Cart />} />
-        <Route exact path="*" element={<SignIn />} />
+        <Route path="/" element={<Home />} />
+        <Route
+          path="/cart"
+          element={
+            <PrivateRoute>
+              <Route path="/cart" element={<Cart />} />
+            </PrivateRoute>
+          }
+        />
+        <Route path="/details/:productId" element={<ShowDetails />} />
+        <Route path="/form/*" element={<Form />} />
       </Routes>
     </BrowserRouter>
   );

@@ -1,3 +1,4 @@
+import { initializeApp } from "firebase/app";
 const firebaseConfig = {
     apiKey: "AIzaSyDcl4SV03MX-lAI9yU-iL8zbBSFwDCYkyU",
     authDomain: "hot-chili-restaurant.firebaseapp.com",
@@ -7,4 +8,4 @@ const firebaseConfig = {
     appId: "1:833395015078:web:5891c4aea3b99696c8a367"
   };
 
-export default firebaseConfig;
+  export const app = initializeApp(firebaseConfig);

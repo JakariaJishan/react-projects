@@ -1,7 +1,8 @@
 import { Box, Button, TextField } from "@mui/material";
 import React from "react";
+import { Link } from "react-router-dom";
 
-const SignIn = () => {
+const SignIn = ({setEmail, setPassword, handleSignIn}) => {
   return (
     <div style={{ textAlign: "center" }}>
       <h1>this is sign in page</h1>
@@ -17,6 +18,7 @@ const SignIn = () => {
           id="outlined-basic"
           label="Enter Your Email"
           variant="outlined"
+          onChange={(e)=> setEmail(e.target.value)}
         />
         <br />
         <TextField
@@ -24,17 +26,16 @@ const SignIn = () => {
           label="Password"
           type="password"
           autoComplete="current-password"
+          onChange={(e)=> setPassword(e.target.value)}
         />
         <br />
         <br />
       </Box>
-      <Button variant="contained" size="large">
+      <Button variant="contained" size="large" onClick={handleSignIn}>
         Sign In
       </Button>
       <p>or</p>
-      <Button variant="outlined" size="large">
-        Sign Up
-      </Button>
+      <Link to='/form/signup'>create a new account</Link>
     </div>
   );
 };
