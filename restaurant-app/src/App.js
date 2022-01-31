@@ -4,6 +4,7 @@ import Form from "./components/FormControl/Form/Form";
 import Header from "./components/Header/Header";
 import Home from "./components/Home/Home";
 import { PrivateRoute } from "./components/PrivateRoute/PrivateRoute";
+import Products from "./components/Products/Products";
 import ShowDetails from "./components/ShowDetails/ShowDetails";
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         />
         <Route path="/details/:productId" element={<ShowDetails />} />
         <Route path="/form/*" element={<Form />} />
+        <Route path="/products" element={<Products/>}/>
       </Routes>
     </BrowserRouter>
   );

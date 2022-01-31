@@ -6,7 +6,7 @@
 .shop-main:hover {
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
-.shop-main-btn {
+/* .shop-main-btn {
   background-color: white;
   transition: 0.4s ease-in;
   border-radius: 15px;
@@ -16,4 +16,4 @@
 .shop-main-btn:hover {
   background-color: black;
   color: white;
-}
+} */

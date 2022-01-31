@@ -16,15 +16,15 @@ const Products = (props) => {
   return (
     <div className="products-main">
       <div className="products">
-        <h1>products</h1>
+        <h1>Let's Explore...</h1>
         <div className="products-filter">
           <div>
-            <Button  variant="outlined" onClick={() => setCount(product)}>all</Button>
-            <Button variant="outlined" onClick={() => handleFilter("breakfast")}>
+            <Button  variant="outlined"   style={{background:'black', color:'white'}} onClick={() => setCount(product)}>all</Button>
+            <Button variant="outlined" color="warning" onClick={() => handleFilter("breakfast")}>
               break fast
             </Button>
-            <Button variant="outlined" onClick={() => handleFilter("lunch")}>lunch</Button>
-            <Button  variant="outlined" onClick={() => handleFilter("shakes")}>dinner</Button>
+            <Button variant="outlined" color="warning" onClick={() => handleFilter("lunch")}>lunch</Button>
+            <Button  variant="outlined" color="warning" onClick={() => handleFilter("shakes")}>dinner</Button>
           </div>
         </div>
         <div className="products-items">

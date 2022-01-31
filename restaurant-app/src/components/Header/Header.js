@@ -1,5 +1,6 @@
-import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import LoginIcon from "@mui/icons-material/Login";
+import LogoutIcon from "@mui/icons-material/Logout";
+import ShoppingCartCheckoutIcon from '@mui/icons-material/ShoppingCartCheckout';
 import { Button } from "@mui/material";
 import React from "react";
 import { connect } from "react-redux";
@@ -20,15 +21,19 @@ const Header = (props) => {
     <div className="main-header">
       <div className="header">
         <div>
-          <h1>tfood</h1>
+          <h1>
+            <Link to="/" style={{color:'#ed6c02'}}>T-Food</Link>
+          </h1>
         </div>
-        <div className="header-left">
+        <div
+          className="header-left"
+        >
           <NavLink
             to="/"
             style={({ isActive }) =>
               isActive
                 ? {
-                    color: "black",
+                    color: "#ed6c02",
                   }
                 : {}
             }
@@ -40,7 +45,7 @@ const Header = (props) => {
             style={({ isActive }) =>
               isActive
                 ? {
-                    color: "black",
+                    color: "#ed6c02",
                   }
                 : {}
             }
@@ -52,23 +57,34 @@ const Header = (props) => {
             style={({ isActive }) =>
               isActive
                 ? {
-                    color: "black",
+                    color: "#ed6c02",
                   }
                 : {}
             }
           >
-            <FontAwesomeIcon icon={faShoppingCart} />
+            <ShoppingCartCheckoutIcon/>
             <sup> {cart.length}</sup>
           </NavLink>
-
+        </div>
+        <div >
           {accessToken ? (
             <div>
-              <span style={{fontSize:'30px', fontWeight:'bold', marginRight:'1rem'}}>{displayName}</span>
-              <Button onClick={handleLogOut}>log out</Button>
+              <span
+                style={{
+                  color: "#ed6c02",
+                  textTransform: "uppercase",
+                  fontWeight: "bold",
+                }}
+              >
+                {displayName}
+              </span>
+              <Button style={{ color: "black" }} onClick={handleLogOut}>
+                <LogoutIcon />
+              </Button>
             </div>
           ) : (
             <Link to={"/form/signin"} className="header-signIn">
-              Sign in
+              <LoginIcon />
             </Link>
           )}
         </div>

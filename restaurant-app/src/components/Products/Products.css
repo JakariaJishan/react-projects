@@ -16,13 +16,11 @@
   text-align: center;
   margin: 2rem 0;
 }
-.products-filter:nth-child(1) {
-  background-color: royalblue;
-}
+
 .products-filter Button {
   margin-left: 1rem;
 }
 .products-filter button:focus {
-  background-color: royalblue;
+  background-color: #f49b02;
   color: white;
 }

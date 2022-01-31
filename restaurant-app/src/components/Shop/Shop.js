@@ -1,3 +1,6 @@
+import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
+import ShoppingCartCheckoutIcon from '@mui/icons-material/ShoppingCartCheckout';
+import { Button } from "@mui/material";
 import React from "react";
 import { Link } from "react-router-dom";
 import "./Shop.css";
@@ -9,20 +12,20 @@ const Shop = (props) => {
       <div>
         <Link to={`/details/${products.id}`}>
           <img src={products.img} alt="" style={{ width: "70%" }} />
-          <p style={{ fontSize: "20px", fontWeight: "bold" }}>
+          <p style={{ fontSize: "20px",color:'#f49b02', fontWeight: "bold", textTransform:'uppercase' }}>
             {products.title}
           </p>
-          <p>${products.price}</p>
+          <h4>$  {products.price}</h4>
         </Link>
       </div>
       {cart.some((ele) => ele.id === products.id) ? (
         <Link to={"/cart"}>
-          <button style={{ border: "1px solid white", padding: "5px 15px" , backgroundColor:'orange', color:'white', borderRadius:'15px' }}>
-            Go to cart
-          </button>
+          <Button variant="contained" size="small" color="warning"  >
+             <ShoppingCartCheckoutIcon/>Go to cart
+          </Button>
         </Link>
       ) : (
-        <button
+        <Button variant="contained" size="small" style={{background: 'black'}}
           className="shop-main-btn"
           onClick={() =>
             addToCart(
@@ -33,8 +36,8 @@ const Shop = (props) => {
             )
           }
         >
-          add to cart
-        </button>
+          <AddShoppingCartIcon/> add
+        </Button>
       )}
     </div>
   );
