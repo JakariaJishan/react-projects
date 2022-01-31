@@ -1,6 +1,6 @@
-import { Navigate, Outlet } from "react-router-dom";
+import { Navigate } from "react-router-dom";
 
-export const PrivateRoute = () => {
+export const PrivateRoute = ({children}) => {
       let accessToken = sessionStorage.getItem('access token');
-      return accessToken? <Outlet/> : <Navigate to={'/form/signin'}/>
+      return accessToken? children : <Navigate to={'/form/signin'}/>
 }

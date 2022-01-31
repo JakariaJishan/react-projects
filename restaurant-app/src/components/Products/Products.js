@@ -1,3 +1,4 @@
+import { Button } from "@mui/material";
 import React, { useState } from "react";
 import { connect } from "react-redux";
 import { addToCart, filterItems } from "../../Redux/Actions/Actions";
@@ -18,12 +19,12 @@ const Products = (props) => {
         <h1>products</h1>
         <div className="products-filter">
           <div>
-            <button  onClick={() => setCount(product)}>all</button>
-            <button onClick={() => handleFilter("breakfast")}>
+            <Button  variant="outlined" onClick={() => setCount(product)}>all</Button>
+            <Button variant="outlined" onClick={() => handleFilter("breakfast")}>
               break fast
-            </button>
-            <button onClick={() => handleFilter("lunch")}>lunch</button>
-            <button onClick={() => handleFilter("shakes")}>dinner</button>
+            </Button>
+            <Button variant="outlined" onClick={() => handleFilter("lunch")}>lunch</Button>
+            <Button  variant="outlined" onClick={() => handleFilter("shakes")}>dinner</Button>
           </div>
         </div>
         <div className="products-items">
