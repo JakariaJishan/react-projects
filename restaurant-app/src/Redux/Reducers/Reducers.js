@@ -114,7 +114,7 @@ const foodReducers = (state = initialState, action) => {
       return {
         ...state,
         cart: state.cart.map((ele) =>
-          ele.id === action.id && ele.quantity > 0
+          ele.id === action.id && ele.quantity > 1
             ? { ...ele, quantity: ele.quantity - 1 }
             : ele
         ),

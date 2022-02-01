@@ -1,13 +1,24 @@
 import LoginIcon from "@mui/icons-material/Login";
 import LogoutIcon from "@mui/icons-material/Logout";
-import ShoppingCartCheckoutIcon from '@mui/icons-material/ShoppingCartCheckout';
-import { Button } from "@mui/material";
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import { Badge, Button, IconButton } from "@mui/material";
+import { styled } from '@mui/material/styles';
 import React from "react";
 import { connect } from "react-redux";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import "./Header.css";
 
+
 const Header = (props) => {
+  const StyledBadge = styled(Badge)(({ theme }) => ({
+    '& .MuiBadge-badge': {
+      right: -3,
+      top: 13,
+      border: `2px solid ${theme.palette.background.paper}`,
+      padding: '0 4px',
+    },
+  }));
+
   const { cart } = props;
   let accessToken = sessionStorage.getItem("access token");
   let displayName = sessionStorage.getItem("display name");
@@ -22,12 +33,12 @@ const Header = (props) => {
       <div className="header">
         <div>
           <h1>
-            <Link to="/" style={{color:'#ed6c02'}}>T-Food</Link>
+            <Link to="/" style={{ color: "#ed6c02" }}>
+              T-Food
+            </Link>
           </h1>
         </div>
-        <div
-          className="header-left"
-        >
+        <div className="header-left">
           <NavLink
             to="/"
             style={({ isActive }) =>
@@ -62,11 +73,16 @@ const Header = (props) => {
                 : {}
             }
           >
-            <ShoppingCartCheckoutIcon/>
-            <sup> {cart.length}</sup>
+            <IconButton aria-label="cart">
+              <StyledBadge badgeContent={cart.length} color="secondary">
+                <ShoppingCartIcon />
+              </StyledBadge>
+            </IconButton>
+            
+             
           </NavLink>
         </div>
-        <div >
+        <div>
           {accessToken ? (
             <div>
               <span
