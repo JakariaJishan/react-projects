@@ -79,7 +79,7 @@ const ShowDetails = (props) => {
                   variant="contained"
                   style={{ background: "#f19346" }}
                   onClick={() =>
-                    addToCart(pd.id, pd.title, pd.price, pd.quantity)
+                    addToCart(pd.id, pd.title, pd.price, pd.quantity, pd.img)
                   }
                 >
                   add to cart

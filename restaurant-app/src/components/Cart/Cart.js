@@ -1,4 +1,7 @@
-import { Box, Button, TextField } from "@mui/material";
+import AddIcon from "@mui/icons-material/Add";
+import DeleteOutlineIcon from "@mui/icons-material/DeleteOutline";
+import RemoveIcon from "@mui/icons-material/Remove";
+import { Box, Button, Fab, TextField } from "@mui/material";
 import React from "react";
 import { connect } from "react-redux";
 import {
@@ -18,14 +21,14 @@ const Cart = (props) => {
   return (
     <div
       style={{
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "space-between",
-        margin: "2rem auto",
-        width: "60%",
+        display: "grid",
+        gridTemplateColumns: "1fr 1fr",
+        gridGap: "1rem",
+        margin: "3rem auto",
+        width: "70%",
       }}
     >
-      <div>
+      <div style={{ textAlign: "center" }}>
         <Box
           component="form"
           sx={{
@@ -47,12 +50,12 @@ const Cart = (props) => {
           <TextField
             id="standard-basic"
             label="Add delivery instructions"
-            variant="filled"
+            variant="standard"
           />
           <br />
           <Button
             variant="contained"
-            style={{ width: "96%", background: "rgb(237, 108, 2)" }}
+            style={{ background: "rgb(237, 108, 2)" }}
           >
             Save & Continue
           </Button>
@@ -60,16 +63,70 @@ const Cart = (props) => {
       </div>
       <div>
         {cart.map((pd) => (
-          <div key={pd.cartId}>
-            <h1>{pd.name}</h1>
-            <p>{pd.price}</p>
-            <p>{pd.price * pd.quantity}</p>
-            <button onClick={() => decrementCart(pd.id, pd.quantity)}>-</button>
-            <span>{pd.quantity}</span>
-            <button onClick={() => incrementCart(pd.id, pd.quantity)}>+</button>
-            <button onClick={() => removeFromCart(pd.id)}>remove</button>
+          <div
+            key={Math.random()}
+            style={{
+              background: "#F5F5F5",
+              display: "flex",
+              justifyContent: "space-around",
+              alignItems: "center",
+              gap: "10px",
+              margin: "1rem",
+              padding: "1rem",
+              borderRadius: "15px",
+              position: "relative",
+            }}
+          >
+            <img src={pd.img} alt="food" width="20%" height="20%" />
+            <div style={{ fontSize: "18px", fontWeight: "bold" }}>
+              <span>{pd.name}</span>
+              <p>
+                <span
+                  style={{
+                    fontSize: "24px",
+                    color: "#ed6c02",
+                    fontWeight: "bold",
+                  }}
+                >
+                  ${(pd.price * pd.quantity).toFixed(2)}
+                </span>
+              </p>
+            </div>
+            <div
+              style={{
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "space-around",
+              }}
+            >
+              {" "}
+              <Fab size="small" color="dark" aria-label="add">
+                <RemoveIcon onClick={() => decrementCart(pd.id, pd.quantity)} />
+              </Fab>
+              <span style={{ margin: "0 1rem ", fontSize: "30px" }}>
+                {pd.quantity}
+              </span>
+              <Fab size="small" color="dark" aria-label="add">
+                <AddIcon onClick={() => incrementCart(pd.id, pd.quantity)} />
+              </Fab>
+            </div>
+
+            <DeleteOutlineIcon
+              style={{
+                cursor: "pointer",
+                position: "absolute",
+                top: "10px",
+                right: "10px",
+                color: "red",
+              }}
+              onClick={() => removeFromCart(pd.id)}
+            />
           </div>
         ))}
+        <div style={{textAlign:'center'}}>
+          <h1>Total: ${totalPrice.toFixed(2)}</h1>
+          <Button variant="contained" disabled style={{background: 'rgb(237, 108, 2)'}}>Place Order</Button>
+        </div>
       </div>
     </div>
   );

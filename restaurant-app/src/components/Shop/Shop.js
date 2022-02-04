@@ -32,7 +32,8 @@ const Shop = (props) => {
               products.id,
               products.title,
               products.price,
-              products.quantity
+              products.quantity,
+              products.img
             )
           }
         >

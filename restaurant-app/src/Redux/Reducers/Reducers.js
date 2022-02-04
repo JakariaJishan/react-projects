@@ -95,6 +95,7 @@ const foodReducers = (state = initialState, action) => {
         name: action.name,
         quantity: action.quantity,
         cartId: state.cart.length + 1,
+        img: action.img
       };
       return { ...state, cart: [...state.cart, newItem] };
 
