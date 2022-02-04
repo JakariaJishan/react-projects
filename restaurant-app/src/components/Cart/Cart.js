@@ -4,6 +4,7 @@ import RemoveIcon from "@mui/icons-material/Remove";
 import { Box, Button, Fab, TextField } from "@mui/material";
 import React from "react";
 import { connect } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import {
   decrementCart,
   incrementCart,
@@ -11,6 +12,7 @@ import {
 } from "../../Redux/Actions/Actions";
 import "./Cart.css";
 const Cart = (props) => {
+  let navigate = useNavigate();
   const { cart, removeFromCart, incrementCart, decrementCart } = props;
   let totalPrice = 0;
   let cartPrices = cart.map((ele) => ele.price * ele.quantity);
@@ -19,7 +21,8 @@ const Cart = (props) => {
     totalPrice = totalPrice + element;
   }
   return (
-    <div
+    <div>
+{     cart.length> 0?  <div
       style={{
         display: "grid",
         gridTemplateColumns: "1fr 1fr",
@@ -123,12 +126,23 @@ const Cart = (props) => {
             />
           </div>
         ))}
-        <div style={{textAlign:'center'}}>
+        <div style={{ textAlign: "center" }}>
           <h1>Total: ${totalPrice.toFixed(2)}</h1>
-          <Button variant="contained" disabled style={{background: 'rgb(237, 108, 2)'}}>Place Order</Button>
+          <Button
+            variant="contained"
+            disabled
+            style={{ background: "rgb(237, 108, 2)" }}
+          >
+            Place Order
+          </Button>
         </div>
       </div>
-    </div>
+    </div>: 
+    <Button onClick={() => {navigate('/')}}>Go Home</Button>
+    
+    }
+</div>
+   
   );
 };
 const mapStateToProps = (state) => {
