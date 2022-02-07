@@ -20,7 +20,6 @@ const Form = () => {
     signInWithEmailAndPassword(auth, email, password)
       .then((res) => {
         // Signed in
-        console.log(res)
         sessionStorage.setItem("access token", res._tokenResponse.refreshToken);
         sessionStorage.setItem("display name", res.user.displayName);
         navigate("/cart");
@@ -41,7 +40,6 @@ const Form = () => {
         updateProfile(auth.currentUser, {
           displayName: userName
         })
-        console.log(res);
 
         // ...
       })

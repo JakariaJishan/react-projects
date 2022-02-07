@@ -4,8 +4,7 @@ import { Link } from "react-router-dom";
 
 const SignIn = ({setEmail, setPassword, handleSignIn}) => {
   return (
-    <div style={{ textAlign: "center" }}>
-      <h1>this is sign in page</h1>
+    <div style={{ textAlign: "center" , margin:'2rem'}}>
       <Box
         component="form"
         sx={{
@@ -13,6 +12,7 @@ const SignIn = ({setEmail, setPassword, handleSignIn}) => {
         }}
         noValidate
         autoComplete="off"
+
       >
         <TextField
           id="outlined-basic"
@@ -30,12 +30,12 @@ const SignIn = ({setEmail, setPassword, handleSignIn}) => {
         />
         <br />
         <br />
-      </Box>
-      <Button variant="contained" size="large" onClick={handleSignIn}>
+        <Button variant="contained" size="large" style={{background:'rgb(237, 108, 2)'}}  fullWidth onClick={handleSignIn}>
         Sign In
       </Button>
-      <p>or</p>
-      <Link to='/form/signup'>create a new account</Link>
+      </Box>
+      <span>or Don't have an account?</span>
+      <Link to='/form/signup' style={{textDecoration:'underline'}}> create a new account</Link>
     </div>
   );
 };

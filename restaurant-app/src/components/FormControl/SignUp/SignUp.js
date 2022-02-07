@@ -4,8 +4,7 @@ import { Link } from "react-router-dom";
 
 const SignUp = ({ setEmail, setPassword, handleSignUp, setUserName }) => {
   return (
-    <div style={{ textAlign: "center" }}>
-      <h1>this is sign in page</h1>
+    <div style={{ textAlign: "center" , margin:'2rem'}}>
       <Box
         component="form"
         sx={{
@@ -37,12 +36,13 @@ const SignUp = ({ setEmail, setPassword, handleSignUp, setUserName }) => {
         />
         <br />
         <br />
-      </Box>
-      <Button variant="contained" size="large" onClick={handleSignUp}>
+        <Button variant="contained" fullWidth size="large" style={{background:'rgb(237, 108, 2)'}} onClick={handleSignUp}>
         Sign Up
       </Button>
-      <p>or</p>
-      <Link to="/form/signin">sign in</Link>
+      </Box>
+      
+      <span>or Have an account? </span>
+      <Link to="/form/signin" style={{textDecoration:'underline'}}>Sign In</Link>
     </div>
   );
 };
