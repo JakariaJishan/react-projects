@@ -53,6 +53,7 @@ const Cart = (props) => {
               <TextField
                 id="standard-basic"
                 label="Address"
+                color="warning"
                 variant="filled"
                 onChange={(e) => setAddress(e.target.value)}
               />
@@ -61,6 +62,7 @@ const Cart = (props) => {
                 id="standard-basic"
                 label="Road No"
                 type='number'
+                color="warning"
                 variant="filled"
                 onChange={(e) => setRoad(e.target.value)}
               />
@@ -69,12 +71,14 @@ const Cart = (props) => {
                 id="standard-basic"
                 label="Contact No"
                 type='number'
+                color="warning"
                 variant="filled"
                 onChange={(e) => setContact(e.target.value)}
               />
               <br />
               <TextField
                 id="standard-basic"
+                color="warning"
                 label="Add delivery instructions"
                 variant="filled"
                 onChange={(e) => setDelivery(e.target.value)}
@@ -173,9 +177,10 @@ const Cart = (props) => {
               <Button
                 variant="contained"
                 disabled={!disabled }
-                style={{ background: "#CECECE" }}
+                color="warning"
+               
               >
-                <Link to="/final-order" > Place Order</Link>
+                <Link to="/final-order"  style={{color:'white'}}> Place Order</Link>
               </Button>
             </div>
           </div>

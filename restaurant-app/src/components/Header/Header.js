@@ -1,13 +1,11 @@
-import LoginIcon from "@mui/icons-material/Login";
-import LogoutIcon from "@mui/icons-material/Logout";
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import { Badge, Button, IconButton } from "@mui/material";
 import { styled } from '@mui/material/styles';
 import React from "react";
 import { connect } from "react-redux";
 import { Link, NavLink, useNavigate } from "react-router-dom";
+import logo3 from '../../images/logo3.png';
 import "./Header.css";
-
 
 const Header = (props) => {
   const StyledBadge = styled(Badge)(({ theme }) => ({
@@ -34,7 +32,7 @@ const Header = (props) => {
         <div>
           <h1>
             <Link to="/" style={{ color: "#ed6c02" }}>
-              T-Food
+             <img src={logo3} alt="logo3" width=''/>
             </Link>
           </h1>
         </div>
@@ -52,7 +50,7 @@ const Header = (props) => {
             Home
           </NavLink>
           <NavLink
-            to="/about-us"
+            to="/products"
             style={({ isActive }) =>
               isActive
                 ? {
@@ -61,7 +59,7 @@ const Header = (props) => {
                 : {}
             }
           >
-            about
+            Products
           </NavLink>
           <NavLink
             to="/cart"
@@ -95,12 +93,12 @@ const Header = (props) => {
                 {displayName}
               </span>
               <Button style={{ color: "black" }} onClick={handleLogOut}>
-                <LogoutIcon />
+               <Button variant="contained" color="warning">Sign Out</Button>
               </Button>
             </div>
           ) : (
             <Link to={"/form/signin"} className="header-signIn">
-              <LoginIcon />
+               <Button variant="contained" color="warning">Sign In</Button>
             </Link>
           )}
         </div>

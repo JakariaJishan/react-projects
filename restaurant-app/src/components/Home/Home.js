@@ -14,7 +14,7 @@ const Home = () => {
         }}
       >
         <Contain></Contain>
-        <Products></Products>
+        <Products ></Products>
         <RecipeReviewCard />
       </div>
       <Footer/>

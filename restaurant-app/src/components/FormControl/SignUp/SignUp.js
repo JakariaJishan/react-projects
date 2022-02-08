@@ -17,6 +17,8 @@ const SignUp = ({ setEmail, setPassword, handleSignUp, setUserName }) => {
           id="outlined-input"
           label="Enter Your Name"
           variant="outlined"
+          color="warning"
+
           onChange={(e) => setUserName(e.target.value)}
         />
         <br />
@@ -24,6 +26,8 @@ const SignUp = ({ setEmail, setPassword, handleSignUp, setUserName }) => {
           id="outlined-basic"
           label="Enter Your Email"
           variant="outlined"
+          color="warning"
+
           onChange={(e) => setEmail(e.target.value)}
         />
         <br />
@@ -31,6 +35,8 @@ const SignUp = ({ setEmail, setPassword, handleSignUp, setUserName }) => {
           id="outlined-password-input"
           label="Password"
           type="password"
+          color="warning"
+
           autoComplete="current-password"
           onChange={(e) => setPassword(e.target.value)}
         />
@@ -42,7 +48,7 @@ const SignUp = ({ setEmail, setPassword, handleSignUp, setUserName }) => {
       </Box>
       
       <span>or Have an account? </span>
-      <Link to="/form/signin" style={{textDecoration:'underline'}}>Sign In</Link>
+      <Link to="/form/signin" style={{textDecoration:'underline', color:'rgb(237 108 2)'}}>Sign In</Link>
     </div>
   );
 };

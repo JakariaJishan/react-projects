@@ -1,6 +1,6 @@
 import { Button, TextField } from "@mui/material";
 import React from "react";
-
+import logo3 from '../../images/logo3.png';
 const Footer = () => {
   return (
     <div style={{ background: "#ddd" }}>
@@ -15,7 +15,7 @@ const Footer = () => {
         }}
       >
         <div>
-          <h1>logo</h1>
+          <img src={logo3} alt="" />
         </div>
         <div>
               <h1>Subscribe our restaurant</h1>
