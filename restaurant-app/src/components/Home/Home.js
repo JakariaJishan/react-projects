@@ -1,19 +1,25 @@
-import React from 'react';
-import Contain from '../Container/Contain';
-import Products from '../Products/Products';
-import RecipeReviewCard from '../ReceipeCardReview/ReceipeCardReview';
+import React from "react";
+import Contain from "../Container/Contain";
+import Footer from "../Footer/Footer";
+import Products from "../Products/Products";
+import RecipeReviewCard from "../ReceipeCardReview/ReceipeCardReview";
 
 const Home = () => {
-    return (
-        <div style={{
-            width:'80%',
-            margin:'auto'
-        }}>
-            <Contain></Contain>
-            <Products></Products>
-            <RecipeReviewCard/>
-        </div>
-    );
+  return (
+    <div>
+      <div
+        style={{
+          width: "60%",
+          margin: "auto",
+        }}
+      >
+        <Contain></Contain>
+        <Products></Products>
+        <RecipeReviewCard />
+      </div>
+      <Footer/>
+    </div>
+  );
 };
 
 export default Home;
